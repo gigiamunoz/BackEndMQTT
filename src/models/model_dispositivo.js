@@ -7,6 +7,7 @@ const DatoDispositivo = new Schema({
   //categorie: {type: Schema.Types.ObjectId, ref: Categoria , require:[true, "Categoria es obligatoria"]} , //Se puede relacionar con el id de categoria
   categorie: {type: String, require:[true, "Categoria es obligatoria"]} ,
   variable: {type: String, require:[true, "El valor es obligatoria"]},
+  tipoVariable: {type: String, require:[true, "El tipo es obligatoria"]},
   latitud:   {type: String, require:[true, "Latitud es obligatoria"]},
   longitud: {type: String, require:[true, "Longitud es obligatoria"]},
   date: { type: Date, default: Date.now },

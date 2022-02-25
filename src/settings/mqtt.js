@@ -19,8 +19,9 @@ function EventoConectar() {
     var datos = message.toString().split('/');
     date=datos[0];
     variable=datos[1];
-    lati=datos[2];
-    long=datos[3];
+    tipoDato=datos[2];
+    lati=datos[3];
+    long=datos[4];
     // console.log(date +"-" +variable+"-" +lati+"-" +long )
     var nombre = "Dispositivo no encontrado";
     if(topic=="LAB4Unicauca/Arduino"){
@@ -48,6 +49,7 @@ function EventoConectar() {
           "_id": new mgs.Types.ObjectId(),
           "categorie": nombre,
           "variable": variable ,
+          "tipoVariable" : tipoDato,
           "latitud": lati,
           "longitud": long,
           "date": date
@@ -57,7 +59,7 @@ function EventoConectar() {
       Dispositivo.create(datoDisp)
       categoria.DatosId.push(datoDisp._id);
       categoria.save();
-      console.log(categoria)
+      console.log(datoDisp)
       });
 
     }
