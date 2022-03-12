@@ -55,7 +55,7 @@ function EventoConectar() {
           "date": date
         }
         
-      console.log(categoria.DatosId)
+      //console.log(categoria.DatosId)
       Dispositivo.create(datoDisp)
       categoria.DatosId.push(datoDisp._id);
       categoria.save();
